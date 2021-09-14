@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  namespace :user do
+  namespace :users do
     namespace :quiz do
       resources :answers
     end
   end
-
-  
 
   resources :quizzes do
     scope module: :quiz do

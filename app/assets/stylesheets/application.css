@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    margin: 0;
+}
+
+.m-auto {
+    margin:auto;
+}
+
+.all-width {
+    width:100%
+}
+
+.datepicker-start {
+   width: 110px
+}
+
+.datepicker-end {
+   width: 110px
+}
+
+.contenedor_principal {
+    color: 	#787878;
+    background-color: #DCDCDC;
+    width: 100%;
+}
+
+.alert {
+    margin-top: 0px;
+}

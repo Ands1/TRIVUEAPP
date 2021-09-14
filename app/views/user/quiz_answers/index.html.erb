@@ -5,9 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Status</th>
-      <th scope="col">Creator</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +12,7 @@
   <tbody>
     <% @user_quiz_answers.each do |user_quiz_answer| %>
       <tr>
-        <td><%= user_quiz_answer.id %></td>
-        <td><%= user_quiz_answer.status%></td>
-
-        <td><%= link_to 'Show', user_quiz_answer_url %></td>
+        <td><%= link_to 'Show', user_quiz_answer %></td>
         <td><%= link_to 'Edit', edit_user_quiz_answer_path(user_quiz_answer) %></td>
         <td><%= link_to 'Destroy', user_quiz_answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
