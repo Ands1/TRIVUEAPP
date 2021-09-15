@@ -3,5 +3,5 @@ class Quiz::Question < ApplicationRecord
         true: "1", 
         false: "0"    
       }
-      #belongs_to :quiz, foreign_key: "users_id"
+      belongs_to :quiz, foreign_key: "quizzes_id"
 end

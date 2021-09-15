@@ -3,7 +3,7 @@ class Quiz::QuestionsController < ApplicationController
 
   # GET /quiz/questions or /quiz/questions.json
   def index
-    @quiz_questions = Quiz::Question.all
+    @quiz_questions = Quiz::Question.where(quizzes_id: params[:quiz_id])
   end
 
   # GET /quiz/questions/1 or /quiz/questions/1.json
@@ -22,10 +22,11 @@ class Quiz::QuestionsController < ApplicationController
   # POST /quiz/questions or /quiz/questions.json
   def create
     @quiz_question = Quiz::Question.new(quiz_question_params)
+    @quiz_question.quiz = Quiz.find_by_id(params[:quiz_id])
 
     respond_to do |format|
       if @quiz_question.save
-        format.html { redirect_to quiz_questions_url, notice: "Question was successfully created." }
+        format.html { redirect_to new_quiz_question_path, notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @quiz_question }
       else
         format.html { render :new, status: :unprocessable_entity }

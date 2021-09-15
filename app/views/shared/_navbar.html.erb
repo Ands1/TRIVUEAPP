@@ -1,11 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-light">
 <div class="container-fluid">
-  <a class="navbar-brand" href="/">Trivue</a>
+  <a class="navbar-brand" href="/">Trivia</a>
   <% name = current_user.present? ? current_user.email : 'Guest' %>
           <% name2 = current_user.present? ? current_user.username : 'Guest' %>
-          <div class="offset-4 all-width">
-            <p class="m-auto">You are logged as: <%= name %>
-          </div>
+
           <!--<p>Welcome <%= name2 %> </p>-->
   <% name = current_user.present? ? current_user.first_name : 'Desconocido' %>
   <% current_user %>
@@ -27,6 +25,9 @@
                 <li class="nav-item">
                     <%= link_to 'Register', new_user_registration_path, class: 'nav-link' %>
                 </li>
+                <div>
+                    <%=  %>
+                </div>
       <% end %>
 
       
