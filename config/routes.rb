@@ -4,10 +4,10 @@ Rails.application.routes.draw do
       resources :answers
     end
   end
-  
 
   resources :quizzes do
     scope module: :quiz do
+      resources :takesurveys
       resources :questions
     end
   end

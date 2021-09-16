@@ -1,0 +1,3 @@
+class TakequizzesController < ApplicationController
+  
+end
