@@ -22,6 +22,7 @@
         <td><%= link_to 'Take Quiz', quiz_questions_url(quiz,@questions) %></td>
         <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
         <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Add Questions', new_quiz_question_url(quiz,@questions) %></td>
       </tr>
     <% end %>
   </tbody>
