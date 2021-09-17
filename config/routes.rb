@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     end
   end
 
+  post 'quizzes/:quiz_id/takesurveys/submit' => 'quiz/takesurveys#submit', :as => 'save_answer'
+
   resources :quizzes do
     scope module: :quiz do
       resources :takesurveys

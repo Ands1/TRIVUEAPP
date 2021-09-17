@@ -10,8 +10,8 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="col-4">
+<div class="justify-content-center">
+  <div class="col-4 ">
     <div class="input-group mb-3">
       <%= form.label :name, class:"input-group-text", style:"background-color: ;"%>
       <%= form.text_field :name, class:"form-control" %>
@@ -21,8 +21,13 @@
       <%= form.datetime_select :end_time, class:"form-control" %>
     </div>
   </div>
+</div>
 
   <div class="actions">
     <%= form.submit %>
+  </div>
+
+  <div class="d-flex">
+    <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, quizzes_path, class: "backbutton" %>
   </div>
 <% end %>

@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Quiz Questions</h1>
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -17,12 +15,7 @@
       <tr>
         <td><%= quiz_question.id %></td>
         <td><%= quiz_question.question %></td>
-        <td>
-        <select name="carstatus" id="status">
-          <option value="Status">True</option>  
-          <option value="Status">False</option>  
-        </select>  
-        </td>
+        <td><%= quiz_question.status %> </td>
         <!--
         <td><%= link_to 'Show', quiz_questions_url %></td>
         <td><%= link_to 'Edit', edit_quiz_question_path(:id => quiz_question.id) %></td>
@@ -33,6 +26,6 @@
 </table>
 
 <br>
-<%= link_to 'Back', quizzes_path %>
+<%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, quizzes_path %>
 
 <!--<%= link_to 'New Quiz Question', new_quiz_question_path %>-->

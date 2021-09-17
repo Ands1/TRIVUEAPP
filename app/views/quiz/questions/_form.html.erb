@@ -11,19 +11,28 @@
     </div>
   <% end %>
 
+  <div class="d-flex justify-content-center">
     <div class="col-4 ">
       <div class="input-group mb-3">
         <%= form.label :question, class:"input-group-text", style:"background-color: ;"%>
         <%= form.text_field :question, class:"form-control" %>
       </div>
 
+       
       <div class="input-group mb-3">
         <%= form.label :status, class:"input-group-text", style:"background-color: ;" %>
+        <!--<%= form.select :status, [['None', false], ['Yes', true]] %>-->
         <%= form.select(:status, Quiz::Question.statuses.keys.map {|status| [status.titleize,status ]}) %>
       </div>
     <div>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+<div class="justify-content-center">
+  <div class="d-flex">
+    <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, quizzes_path, class: "backbutton" %>
+  </div>
+</div>
 <% end %>

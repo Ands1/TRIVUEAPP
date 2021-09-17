@@ -5,9 +5,11 @@ class Quiz::TakesurveysController < ApplicationController
     end
 
 
-    def destroy
-        answer  = self.question.status
-        user_answer = Quiz::Question.status
-        puts "---------------------------------", answer, "-------------------------------"
+    def submit
+        puts "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", params, @status_answer
+        respond_to do |format|
+            
+            format.html { redirect_to @quiz, notice: "PREGUNTAS GUARDADAS" }
+        end
     end
 end

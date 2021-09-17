@@ -6,6 +6,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def avatar_thumbnail
-    avatar.variant(resize: "150x150").processed
-  end 
+    if avatar.attached?
+      avatar.variant(resize: "50x50!").processed 
+    else
+      "/default_profile.jpg"
+    end 
+  end
 end

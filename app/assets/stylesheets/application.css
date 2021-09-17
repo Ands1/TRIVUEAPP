@@ -43,3 +43,11 @@
 .alert {
     margin-top: 0px;
 }
+
+input {
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: white;
+    justify-content: center;
+}

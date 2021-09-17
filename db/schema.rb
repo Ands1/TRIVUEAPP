@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_09_14_132859) do
 
   create_table "quiz_questions", force: :cascade do |t|
     t.string "question", default: "", null: false
-    t.boolean "status", null: false
+    t.string "status", default: "True", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "quizzes_id"
