@@ -15,7 +15,7 @@
   <tbody>
     <% @takes.each do |take| %>
       <tr>
-      <%= form_with url: "/takesurveys/submit", method: :post do |form| %>
+      <%= form_with url: "/quizzes/#{@quiz.id}/takesurveys/submit", method: :post do |form| %>
         <td><%= take.id %></td>
         <td><%= take.question %></td>
 
