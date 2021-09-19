@@ -2,12 +2,13 @@
 
 <h1>Quiz Question Answers</h1>
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Answer</th>
+      <th scope="col">Pregunta</th>
+      <!--<th scope="col">ID</th>-->
       <th scope="col">Username</th>
+      <th scope="col">Answer</th>
       <th scope="col">Status</th>
       <th colspan="3"></th>
     </tr>
@@ -16,9 +17,10 @@
   <tbody>
     <% @quiz_question_answers.each do |quiz_question_answer| %>
       <tr>
-        <td><%= quiz_question_answer.id %></td> 
-        <td><%= quiz_question_answer.status %></td> 
+        <td><%= quiz_question_answer.quiz_question.question %></td> 
+        <!--<td><%= quiz_question_answer.id %></td>-->
         <td><%= quiz_question_answer.user.username %></td> 
+        <td><%= quiz_question_answer.status %></td> 
         <% if @match.status === quiz_question_answer.status  %>
           <td class="">Respueta correcta</td>
         <% else %>
@@ -31,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Quiz Question Answer', new_quiz_question_answer_path %>
+<!--<%= link_to 'New Quiz Question Answer', new_quiz_question_answer_path %>-->
