@@ -1,12 +1,11 @@
 <h1>Quiz Questions</h1>
 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered ">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Question</th>
       <th scope="col">Answer</th>
-      <th scope="col">Submit</th>
 
       <th colspan="3"></th>
     </tr>
@@ -15,19 +14,10 @@
   <tbody>
     <% @takes.each do |take| %>
       <tr>
-      <%= form_with url: "/quizzes/#{@quiz.id}/takesurveys/submit", method: :post do |form| %>
+
         <td><%= take.id %></td>
         <td><%= take.question %></td>
-
-        <td><%= select_tag(:status, options_for_select([['True',true],['False',false]])) %>
-        </td>
-        <td>    
-        <div class="actions">
-          <%= form.submit %>
-        </div>
-
-          <%= link_to '<i class="fa fa-check" aria-hidden="true"></i>'.html_safe, save_answer_path(question_id:take.id, status: :status), method: :post %></td>
-      <% end %>
+        <td><%= take.status %></td>  
       </tr>
     <% end %>
 

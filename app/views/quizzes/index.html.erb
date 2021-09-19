@@ -20,10 +20,10 @@
         <td><%= quiz.name %></td> 
         <td><%= quiz.end_time %></td>
         <td><%= link_to 'Add Questions', new_quiz_question_url(quiz,@questions) %></td>
-        <td><%= link_to 'Take Quiz', quiz_takesurveys_url(quiz,@quiz_takesurveys) %></td>
+        <td><%= link_to 'Take Quiz', quiz_questions_url(quiz) %></td>
         <td><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_quiz_path(quiz) %>       |
         <%= link_to '<i class="fas fa-trash"></i>'.html_safe, quiz, method: :delete, data: { confirm: 'Are you sure?' } %> |
-        <%= link_to '<i class="far fa-eye"></i>'.html_safe, quiz_questions_url(quiz) %></td>
+        <%= link_to '<i class="far fa-eye"></i>'.html_safe, quiz_takesurveys_url(quiz,@quiz_takesurveys) %></td>
         </td>
 
       </tr>
