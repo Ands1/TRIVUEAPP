@@ -28,7 +28,7 @@ class Quiz::Question::AnswersController < ApplicationController
 
     respond_to do |format|
       if @quiz_question_answer.save
-        format.html { redirect_to quiz_question_url, notice: "Answer was successfully created." }
+        format.html { redirect_to quiz_question_answers_url, notice: "Answer was successfully created." }
         format.json { render :show, status: :created, location: @quiz_question_answer }
       else
         format.html { render :new, status: :unprocessable_entity }
