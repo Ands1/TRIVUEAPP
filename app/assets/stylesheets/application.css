@@ -35,9 +35,7 @@
 }
 
 .contenedor_principal {
-    color: 	#787878;
-    background-color: #DCDCDC;
-    width: 100%;
+
 }
 
 .alert {
@@ -68,4 +66,13 @@ img {
 img:hover{
     -webkit-transform:scale(1.2); 
 }
+
+
+
+
+
+
+
+
+
 

@@ -3,6 +3,8 @@ class Quiz::Question < ApplicationRecord
         true: "1", 
         false: "0"    
       }
+
+      validates :question, presence: true, allow_blank: false
       belongs_to :quiz, foreign_key: "quizzes_id"
       has_many :quiz_question_answers, dependent: :delete_all, class_name: "Quiz::Question::Answer", foreign_key: "quiz_questions_id"
 end

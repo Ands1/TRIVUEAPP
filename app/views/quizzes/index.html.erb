@@ -21,16 +21,27 @@
         <td><%= quiz.name %></td> 
         <% if quiz.end_time >= DateTime.now %>
            <td> In progress </td>
+           
         <% else %>
-          <td> Finished </td>
+          <td> Quiz time already finished </td>
         <% end %> 
+
         <td><%= quiz.end_time %></td>
-        <td><%= link_to 'Add Questions', new_quiz_question_url(quiz,@questions) %></td>
-        <td><%= link_to 'Take Quiz', quiz_questions_url(quiz) %></td>
+
+        <% if quiz.end_time >= DateTime.now%>
+          <td><%= link_to 'Add Questions', new_quiz_question_url(quiz,@questions) %></td>
+        <% else %>
+          <td> Quiz time already finished </td>
+        <% end %>
+        <% if quiz.end_time >= DateTime.now%>
+          <td><%= link_to 'Take Quiz', quiz_questions_url(quiz) %></td>
+        <% else %>
+          <td> Quiz time already finished </td>
+        <% end %>
+
         <td><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_quiz_path(quiz) %>       |
         <%= link_to '<i class="fas fa-trash"></i>'.html_safe, quiz, method: :delete, data: { confirm: 'Are you sure?' } %> |
         <%= link_to '<i class="far fa-eye"></i>'.html_safe, quiz_takesurveys_url(quiz,@quiz_takesurveys) %>
-        
         </td>
 
       </tr>
