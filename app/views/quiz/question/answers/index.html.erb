@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Quiz Question Answers</h1>
 
 <table class="table table-bordered table-hover">
@@ -21,6 +19,7 @@
         <!--<td><%= quiz_question_answer.id %></td>-->
         <td><%= quiz_question_answer.user.username %></td> 
         <td><%= quiz_question_answer.status %></td> 
+
         <% if @match.status === quiz_question_answer.status  %>
           <td class="">Respueta correcta</td>
         <% else %>
@@ -33,4 +32,5 @@
 
 <br>
 
+<%= link_to 'Back to questions', quiz_questions_path %>
 <!--<%= link_to 'New Quiz Question Answer', new_quiz_question_answer_path %>-->

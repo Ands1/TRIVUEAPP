@@ -51,3 +51,21 @@ input {
     background-color: white;
     justify-content: center;
 }
+
+a {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+a:hover {
+    -webkit-transform:scale(1.1); 
+}
+
+img {
+    margin-right: 10px;
+}
+
+img:hover{
+    -webkit-transform:scale(1.2); 
+}
+

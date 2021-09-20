@@ -16,7 +16,7 @@
       <tr>
         <td><%= quiz_question.id %></td>
         <td><%= quiz_question.question %></td>
-        <td><%= link_to 'Submit answer', new_quiz_question_answer_path(:quiz_id, @quiz_questions.ids) %></td>
+        <td><%= link_to 'Submit answer', "/quizzes/#{quiz_question.quiz.id}/questions/#{quiz_question.id}/answers/new" %></td>
         <!--
         <td><%= link_to 'Show', quiz_questions_url %></td>
         <td><%= link_to 'Edit', edit_quiz_question_path(:id => quiz_question.id) %></td>

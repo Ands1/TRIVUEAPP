@@ -3,7 +3,7 @@ class Quiz::Question::AnswersController < ApplicationController
 
   # GET /quiz/question/answers or /quiz/question/answers.json
   def index
-    @quiz_question_answers = Quiz::Question::Answer.all
+    @quiz_question_answers = Quiz::Question::Answer.where(quiz_questions: params[:question_id])
     @match = Quiz::Question.find_by_id(params[:question_id])
   end
 

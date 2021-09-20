@@ -6,6 +6,7 @@
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">End time</th>
+      <th scope="col">Status</th>
       <th scope="col">Questions</th>
       <th scope="col">Ready?</th>
       <th scope="col">Manage</th>
@@ -18,6 +19,11 @@
       <tr>
         <td><%= quiz.id %></td> 
         <td><%= quiz.name %></td> 
+        <% if quiz.end_time >= DateTime.now %>
+           <td> In progress </td>
+        <% else %>
+          <td> Finished </td>
+        <% end %> 
         <td><%= quiz.end_time %></td>
         <td><%= link_to 'Add Questions', new_quiz_question_url(quiz,@questions) %></td>
         <td><%= link_to 'Take Quiz', quiz_questions_url(quiz) %></td>
